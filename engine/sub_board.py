@@ -172,3 +172,14 @@ class SubBoard(object):
 
     def __getitem__(self, key):
         return self._board[key]
+
+    def get_cell(self, sub_board_coords: SubBoardCoords) -> Cell:
+        """Checks whether the given move is already played in this board
+
+        Args:
+            sub_board_coords: The intended move
+
+        Returns:
+            True if the cell referenced by the move is already played, False otherwise
+        """
+        return self._board[sub_board_coords.row][sub_board_coords.col]
